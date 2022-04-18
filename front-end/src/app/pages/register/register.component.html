@@ -1,0 +1,232 @@
+<app-navbar></app-navbar>
+<div class="register">
+    <div class="container">
+        <div class="row justify-content-md-center">
+            <div class="col-md-10">
+                <div class="card  bg-warning mb-3">
+                    <div class="card-body">
+                        <img src="assets/user1.jpg" width="70px" class="user-avatar" />
+                        <h2>Ajouter un nouveau employee</h2>
+                        <div class="container-fluid col-md-12">
+                            <div class="container p-3 my-3">
+                                <div class="row">
+                                    <div class="col">
+
+                                        <form (ngSubmit)="onRegisterSubmit(); registerForm.reset();"
+                                            #registerForm="ngForm">
+                                            <div class="container">
+                                                <div class="row">
+                                                    <table class="responsive">
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control "
+                                                                        placeholder="Enter votre nom" id="name" required
+                                                                        minlength="8" [(ngModel)]="model.name"
+                                                                        name="name" #name="ngModel">
+                                                                    <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="name.errors.required">votre nom est
+                                                                            obligatoire.</div>
+                                                                        <div *ngIf="name.errors.minlength">au moins 8
+                                                                            caractere.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control "
+                                                                        placeholder="Enter votre nom d'utilisateur"
+                                                                        id="username" required minlength="8"
+                                                                        [(ngModel)]="model.username" name="username"
+                                                                        #username="ngModel">
+                                                                    <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="username.errors.required">Nom
+                                                                            utilisateur est
+                                                                            obligatoire.</div>
+                                                                        <div *ngIf="username.errors.minlength">au moins
+                                                                            8 caractere.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="email" class="form-control "
+                                                                        placeholder="Enter votre addresse mail"
+                                                                        id="email" required [(ngModel)]="model.email"
+                                                                        name="email" #email="ngModel">
+                                                                    <div *ngIf="email.invalid && (email.dirty || email.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="email.errors.required">Email est
+                                                                            obligatoire.</div>
+                                                                        <div *ngIf="email.errors.email">email invalid.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="password" class="form-control "
+                                                                        placeholder="Enter votre mot de passe"
+                                                                        id="password" required
+                                                                        pattern="(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$"
+                                                                        [(ngModel)]="model.password" name="password"
+                                                                        #password="ngModel">
+                                                                    <div *ngIf="password.invalid && (password.dirty || password.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="password.errors.required">Mot de
+                                                                            passe.</div>
+                                                                        <div *ngIf="password.errors.pattern">Password
+                                                                            shall contain an
+                                                                            uppercase, a
+                                                                            lowercase and
+                                                                            one numerical or special characters. Length
+                                                                            must be minimum 8
+                                                                            characters.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control "
+                                                                        placeholder="Enter votre rib" id="rib" required
+                                                                        minlength="11" maxlength="11"
+                                                                        [(ngModel)]="model.rib" name="rib"
+                                                                        #rib="ngModel">
+                                                                    <div *ngIf="rib.invalid && (rib.dirty || rib.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="rib.errors.required">rib est
+                                                                            obligatoire.</div>
+                                                                        <div *ngIf="rib.errors.minlength">rib contient
+                                                                            11 caractere.</div>
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control "
+                                                                        placeholder="Enter votre cnss" id="cnss"
+                                                                        required [(ngModel)]="model.cnss" name="cnss"
+                                                                        #cnss="ngModel">
+                                                                    <div *ngIf="cnss.invalid && (cnss.dirty || cnss.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="cnss.errors.required">cnss est
+                                                                            obligatoire.</div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control "
+                                                                        placeholder="Enter votre cin" id="cin"
+                                                                        minlength="8" maxlength="8" required
+                                                                        [(ngModel)]="model.cin" cin="cin"
+                                                                        #cin="ngModel">
+                                                                    <div *ngIf="cin.invalid && (cin.dirty || cin.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="cin.errors.required">cin est
+                                                                            obligatoire.</div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td></td>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="date" class="form-control "
+                                                                        placeholder="Enter dateEmbauche"
+                                                                        id="dateEmbauche" required
+                                                                        [(ngModel)]="model.dateEmbauche"
+                                                                        name="dateEmbauche" #dateEmbauche="ngModel">
+                                                                    <div *ngIf="dateEmbauche.invalid && (dateEmbauche.dirty || dateEmbauche.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="dateEmbauche.errors.required">
+                                                                            dateEmbauche est
+                                                                            obligatoire.</div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+
+                                                        </tr>
+                                                        <!--<tr>
+                                                            <td>
+                                                                <div class="form-group col-xs-6">
+
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Enter votre urpp" id="urpp"
+                                                                        required minlength="8" [(ngModel)]="model.urpp"
+                                                                        name="urpp" #urpp="ngModel">
+                                                                    <div *ngIf="urpp.invalid && (urpp.dirty || urpp.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="urpp.errors.required">urpp est
+                                                                            obligatoire.</div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                            <td>
+                                                                <div class="form-group ">
+
+                                                                    <input type="text" class="form-control"
+                                                                        placeholder="Enter votre Telephone" id="Tel"
+                                                                        minlength="8" maxlength="8" required cin
+                                                                        [(ngModel)]="model.Tel" name="cin"
+                                                                        #Tel="ngModel">
+                                                                    <div *ngIf="Tel.invalid && (Tel.dirty || Tel.touched)"
+                                                                        class="alert alert-danger">
+                                                                        <div *ngIf="Tel.errors.required">Tel est
+                                                                            obligatoire.</div>
+
+                                                                    </div>
+                                                                </div>
+                                                            </td>
+                                                        </tr>-->
+                                                    </table>
+
+
+
+
+                                                </div>
+
+
+
+
+                                                <br>
+
+                                                <button type="submit" class="btn rounded-btn"
+                                                    >Inscription</button>
+                                            </div>
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

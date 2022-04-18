@@ -1,0 +1,59 @@
+<app-navbar></app-navbar>
+<div class="page">
+    <form #congeForm="ngForm" (ngSubmit)="onSubmit(congeForm)">
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="row">
+            <div class="col-1">
+
+                &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar" />
+
+            </div>
+
+            <div class="col-xl-4 text-xs-center">
+                <br>
+                <br>
+                <br>
+                <div class="card bg-light mb-2">
+                    <div class="card-header"><button type="submit" class="btn  btn-warning"
+                            type="submit">Ajouter</button></div>
+                    <div class="card-body">
+                        <B><label >ID Employee:</label></B><br>
+                        <select name="pets" id="pet-select" class="form-control"
+                            name="users"[(ngModel)]="congeService.selectedConge.users">
+
+                            <option value="" >Selectionner votre ID</option>
+
+                            <option value="{{user._id}}" 
+                                *ngFor="let user of userService.users">
+                                <td>{{user._id}}</td>
+                            </option>
+
+                        </select> <br>
+
+                        <B><label >Date debut:</label></B><br>
+                        <input  class="form-control" [(ngModel)]="congeService.selectedConge.dateDebut"
+                            name="dateDebut"type="date">
+                           
+                        <B><label >Date Fin:</label></B><br>
+                        <input name="dateFin" type="date" class="form-control" [(ngModel)]="congeService.selectedConge.dateFin"
+                           >
+                            
+                        
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </form>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="container ">
+  <div class="row">
+      <div class="mx-auto" *ngIf="user" >
+          <h2 class="page-header">{{user.name}}</h2>
+          <ul class="list-group">
+              <li class="list-group-item">Username: {{user.username}}</li>
+              <li class="list-group-item">Email: {{user.email}}</li>
+              <li class="list-group-item">Telephone: {{user.Tel}}</li>
+              <li class="list-group-item">CNSS: {{user.cnss}}</li>
+              <li class="list-group-item">CIN: {{user.cin}}</li>
+              <li class="list-group-item">URPP: {{user.urpp}}</li>
+              <li class="list-group-item">RIP: {{user.rib}}</li>
+              <li class="list-group-item">Salaire d'heure: {{user.salaireHoraire}}</li>
+          </ul>
+      </div>
+  </div>
+</div>

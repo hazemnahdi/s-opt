@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="liste">
+
+
+
+    <div class="row">
+        <div class="col-2">
+            <br>
+            &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar" />
+        </div>
+        <div class="col-2">
+            <br>
+            
+            <a type="button" class="btn btn-sm btn-warning" href="add-avance">Nouveau</a>
+        </div>
+       
+        
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-xl-10 text-xs-center">
+                <br>
+                <div class="card  bg-warning mb-3">
+                    <div class="card-body">
+
+
+
+
+                        <table class="table table-bordered" style="font-size: 14px;">
+                            <thead>
+                                <th class="table-warning">Identifant Avance</th>
+                                <th class="table-warning">Mois</th>
+                                <th class="table-warning">montant d'avance</th>
+                                <th class="table-warning">Identifiant d'employée</th>
+                                <th class="table-warning">Nom d'employée</th>
+                               
+                                <th class="table-warning">ACTION</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let avance of avanceService.avances" class="text-center" class="table-warning">
+
+                                    <td>{{avance._id}}</td>
+                                    <td>{{avance.mois}}</td>
+                                    <td>{{avance.montantAvance}}</td>
+                                    <td>{{avance.users}}</td>
+                                    <td>{{avance.name}}</td>
+                                   
+                                    <td><a style="color:red" class="action-btn" (click)="onDelete(avance._id)">
+                                            <i class="bi bi-trash"></i>
+                                        </a></td>
+
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>

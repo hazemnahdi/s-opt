@@ -1,0 +1,81 @@
+<app-navbar></app-navbar>
+<div class="page">
+    <form #avanceForm="ngForm" (ngSubmit)="onSubmit(avanceForm)">
+        <p></p>
+        <p></p>
+        <p></p>
+        <div class="row">
+            <div class="col-1">
+
+                &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar" />
+
+            </div>
+
+            <div class="col-xl-4 text-xs-center">
+                <br>
+                <br>
+                <br>
+                <div class="card bg-light mb-2">
+                    <div class="card-header"><button type="submit" class="btn  btn-warning"
+                            type="submit">Ajouter</button></div>
+                    <div class="card-body">
+                        <B><label >ID Employee:</label></B><br>
+                        <select name="pets" id="pet-select" class="form-control"
+                            name="users"[(ngModel)]="avanceService.selectedAvance.users">
+
+                            <option value="" >Selectionner votre ID</option>
+
+                            <option value="{{user._id}}" 
+                                *ngFor="let user of userService.users">
+                                <td>{{user._id}}</td>
+                            </option>
+
+                        </select> <br>
+
+                        <B><label >Mois:</label></B><br>
+                        <select name="pets" id="pet-select"class="form-control" [(ngModel)]="avanceService.selectedAvance.mois"
+                            name="mois">
+                            <option value="" >selectionner votre mois</option>
+                            <option value="Janvier" >Janvier</option>
+                            <option value="Feverier" >Feverier</option>
+                            <option value="Mars" >Mars</option>
+                            <option value="Avril" >Avril</option>
+                            <option value="Mai" >Mai</option>
+                            <option value="Juin" >Juin</option>
+                            <option value="Juillet" >Juillet</option>
+                            <option value="Aout" >Aout</option>
+                            <option value="Septembre" >Septembre</option>
+                            <option value="Octobre" >Octobre</option>
+                            <option value="Novembre" >Novembre</option>
+                            <option value="Decombre" >Decombre</option>
+                        </select><br>
+                        <B><label >Annee:</label></B><br>
+                        <select name="pets" id="pet-select" class="form-control" [(ngModel)]="avanceService.selectedAvance.annee"
+                            name="annee">
+                            <option value="" >selectionner votre annee</option>
+                            <option value="2020" >2020</option>
+                            <option value="2021" >2021</option>
+                            <option value="2022" >2022</option>
+                            <option value="2023" >2023</option>
+                            <option value="2024" >2024</option>
+                            <option value="2025" >2025</option>
+                        </select> <br>
+                        <B><label >Montant:</label></B><br>
+                        <input type="number"class="form-control" [(ngModel)]="avanceService.selectedAvance.montantAvance"
+                            name="montantAvance"><br>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+    </form>
+    <br>
+    <br>
+    <br>
+</div>

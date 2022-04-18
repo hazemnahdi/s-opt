@@ -1,0 +1,87 @@
+<app-navbar></app-navbar>
+<div class="liste">
+  
+    
+  
+  <div class="row">
+    <div class="col-2">
+      <br>
+      &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar"/>
+    </div>
+    <div class="col-2">
+    <br>
+      <label type="text"  style="font-size: 14px;color:black;"><input checked="" id="optionsRadios1" name="optionsRadios" type="radio" value="option1" />&nbsp;&nbsp;liste des employés actifs</label><br>
+       
+       <br>
+<a type="button" class="btn btn-sm btn-warning"href="register">Nouveau</a>
+</div>
+<div class="col-xl-2">
+  <br>
+  <label type="text" style="font-size: 14px;color:black;"> <input checked="" id="optionsRadios1" name="optionsRadios" type="radio" value="option3" />&nbsp;&nbsp;liste des employés inactifs</label><br>
+  
+  <br>
+  <a type="button" class="btn btn-sm btn-warning" href="">Imprimer</a>
+</div>
+<div class="col-xl-5">
+ <br> 
+  <label type="text" style="font-size: 14px;color:black;"> <input checked="" id="optionsRadios1" name="optionsRadios" type="radio" value="option2" />&nbsp;&nbsp;liste des employés </label><br>
+                      <br>
+                      
+  <a type="button" class="btn btn-sm btn-warning" href="">Tableau des salaires</a>
+  
+</div>
+
+<div class="row">
+  <div class="col-1"></div>
+  <div class="col-xl-10 text-xs-center">
+    <br>
+    <div class="card  bg-warning mb-3">
+      <div class="card-body">
+
+
+        
+
+          <table class="table table-bordered" style="font-size: 14px;">
+            <thead>
+              <th class="table-warning">Identifant Employee</th>
+              <th  class="table-warning">Username</th>
+              <th  class="table-warning">Nom</th>
+              <th class="table-warning">Cin</th>
+              <th  class="table-warning">URPP</th>
+              <th  class="table-warning">Rib</th>
+              <th  class="table-warning">Salaire Horaire</th>
+              <th  class="table-warning">CNSS</th>
+              <th  class="table-warning">ROLE</th>
+              <th  class="table-warning">ACTION</th>
+             
+
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of userService.users" class="text-center" class="table-warning">
+                
+                <td >{{user._id}}</td>
+                <td >{{user.username}}</td>
+                <td> {{user.name}}</td>
+                <td>{{user.cin}}</td>
+                <td>{{user.urpp}}</td>
+                <td>{{user.rib}}</td>
+                <td>{{user.salaireHoraire}}</td>
+                <td>{{user.cnss}}</td>
+                <td>{{user.role}}</td>
+                <td><a style="color:red"class="action-btn" (click)="onDelete(user._id)">
+                  <i class="bi bi-trash"></i>
+                </a></td>
+
+               
+
+
+              </tr>
+            </tbody>
+          </table>
+
+        
+
+      </div>
+    </div>
+  </div>
+</div>

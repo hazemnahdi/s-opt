@@ -1,0 +1,68 @@
+<app-navbar></app-navbar>
+<div class="liste">
+
+
+
+    <div class="row">
+        <div class="col-2">
+            <br>
+            &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar" />
+        </div>
+        <div class="col-2">
+            <br>
+            
+            <a type="button" class="btn btn-sm btn-warning" href="add-prime">Nouveau</a>
+        </div>
+       
+        
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-xl-10 text-xs-center">
+                <br>
+                <div class="card  bg-warning mb-3">
+                    <div class="card-body">
+
+
+
+
+                        <table class="table table-bordered" style="font-size: 14px;">
+                            <thead>
+                                <th class="table-warning">Identifant Prime</th>
+                                <th class="table-warning">Libelle</th>
+                                <th class="table-warning">Mois</th>
+                                <th class="table-warning">annee</th>
+                                <th class="table-warning">Montant</th>
+                                
+                               
+                                <th class="table-warning">ACTION</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let prime of primeService.primes" class="text-center" class="table-warning">
+
+                                    <td>{{prime._id}}</td>
+                                    <td>{{prime.libelle}}</td>
+                                    <td>{{prime.mois}}</td>
+                                    <td>{{prime.annee}}</td>
+                                    <td>{{prime.montantPrime}}</td>
+                                    
+                                   
+                                    <td><a style="color:red" class="action-btn" (click)="onDelete(prime._id)">
+                                            <i class="bi bi-trash"></i>
+                                        </a></td>
+
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>

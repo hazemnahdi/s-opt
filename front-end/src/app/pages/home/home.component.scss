@@ -1,0 +1,39 @@
+.back{
+    background-image: linear-gradient(red, yellow,red, yellow,red, yellow);
+    border: 10px solid white;
+    font-family: "Times New Romen";
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+}
+.h1{
+    color:black;
+}
+.user-avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+
+    a:link {
+        color:black;
+      }
+      
+      /* visited link */
+      a:visited {
+        color: black;
+      }
+      
+      /* mouse over link */
+      a:hover {
+        color: red;
+      }
+      
+      /* selected link */
+      a:active {
+        color: blue;
+      }
+
+    

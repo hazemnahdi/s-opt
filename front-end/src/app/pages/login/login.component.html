@@ -1,0 +1,43 @@
+<div class="login-page">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-4">
+        <div class="card  bg-warning mb-3">
+          <div class="card-body">
+            <img src="assets/user1.jpg" width="150px" class="user-avatar" />
+            <h2>S-Pointage</h2>
+            <div class="container-fluid col-md-12">
+              <div class="container p-3 my-3">
+                <div class="row">
+                  <div class="col">
+
+                    <form (ngSubmit)="onLoginSubmit()" #loginForm="ngForm">
+                      <div class="form-group">
+
+                        <input type="text" class="form-control " placeholder="Nom d'utilisateur" id="username" required
+                          [(ngModel)]="loginData.username" name="username" #lusername="ngModel">
+                        <div *ngIf="lusername.invalid && (lusername.dirty || lusername.touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="lusername.errors.required">Nom d'utilisateur est obligatoire.</div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+
+                        <input type="password" class="form-control " placeholder="Mot de passe" id="password" required
+                          [(ngModel)]="loginData.password" name="password" #lpassword="ngModel">
+                        <div *ngIf="lpassword.invalid && (lpassword.dirty || lpassword.touched)"
+                          class="alert alert-danger">
+                          <div *ngIf="lpassword.errors.required">Mot de passe est obligatoire.</div>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="form-group">
+                        <button class="btn rounded-btn">S'authenfier</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>

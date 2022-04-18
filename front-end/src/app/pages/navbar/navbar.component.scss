@@ -1,0 +1,52 @@
+.container-fluid{
+    font-family: "Times New Romen";
+    color:black;
+  }
+  .navbar-brand{
+      display: flex;
+      height: 100px;
+     
+      align-items: center;
+    }
+    .img-responsive {
+      width:20%;
+      margin-top: 5px;
+      
+    }
+  
+    nav {
+      background-color: rgb(255, 240, 102);
+    }
+    .nav-link {
+      color : white!important;
+    }
+    .fa {
+      font-size: 1.3em;
+      margin-left: 10px;
+    }
+  
+    hr {
+      margin-top: 10px;
+      height: 10px;
+      padding-right: 10px;
+      border-right: 1px solid white;
+    }
+  
+    .zmdi {
+      font-size: 170%;
+    }
+  
+  .toggles {
+    margin-left:70;
+  }
+  .user-avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
+.dropdown-toggle{
+    color:black;
+}
+  .dropdown-menu{
+    background-color: rgb(255, 240, 102);
+  }

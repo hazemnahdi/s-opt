@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<div class="liste">
+
+
+
+    <div class="row">
+        <div class="col-2">
+            <br>
+            &nbsp;&nbsp;<img src="assets/logo1.jpg" width="70px" class="user-avatar" />
+        </div>
+        <div class="col-2">
+            <br>
+            
+            <a type="button" class="btn btn-sm btn-warning" href="add-conge">Nouveau</a>
+        </div>
+       
+        
+
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-xl-10 text-xs-center">
+                <br>
+                <div class="card  bg-warning mb-3">
+                    <div class="card-body">
+
+
+
+
+                        <table class="table table-bordered" style="font-size: 14px;">
+                            <thead>
+                                <th class="table-warning">Identifant Conge</th>
+                                <th class="table-warning">Date debut de congé</th>
+                                <th class="table-warning">Date fin de congé</th>
+                                <th class="table-warning">Identifiant d'employée</th>
+                                
+                               
+                                <th class="table-warning">ACTION</th>
+
+
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let conge of congeService.conges" class="text-center" class="table-warning">
+
+                                    <td>{{conge._id}}</td>
+                                    <td>{{conge.dateDebut}}</td>
+                                    <td>{{conge.dateFin}}</td>
+                                    <td>{{conge.users}}</td>
+                                    
+                                   
+                                    <td><a style="color:red" class="action-btn" (click)="onDelete(conge._id)">
+                                            <i class="bi bi-trash"></i>
+                                        </a></td>
+
+
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>

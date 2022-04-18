@@ -1,0 +1,32 @@
+.page{
+   
+    
+    border: 10px solid white;
+    position: absolute;
+   
+    top: 50px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    
+
+   
+   
+    
+        font-family: "Times New Romen";
+    
+    overflow: auto;
+    background-image: linear-gradient(red, yellow,red, yellow,red,yellow,red,yellow);
+    
+    color: rgb(0, 0, 0);
+    padding: 3em;
+    
+      
+      
+}
+.user-avatar {
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #fff;
+}
